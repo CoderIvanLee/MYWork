@@ -13,6 +13,7 @@
 		430C0B8D1BD7CD55006FC34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430C0B8B1BD7CD55006FC34E /* Main.storyboard */; };
 		430C0B8F1BD7CD55006FC34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430C0B8E1BD7CD55006FC34E /* Assets.xcassets */; };
 		430C0B921BD7CD55006FC34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430C0B901BD7CD55006FC34E /* LaunchScreen.storyboard */; };
+		AC383A76A8DFBEEEB3D8BE75 /* libPods-MyWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7A800B3CD04EAF60DA7224 /* libPods-MyWork.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		430C0B8E1BD7CD55006FC34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		430C0B911BD7CD55006FC34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		430C0B931BD7CD55006FC34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		802942C603316C376B4BD8FF /* Pods-MyWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyWork/Pods-MyWork.release.xcconfig"; sourceTree = "<group>"; };
+		849C5236A7D94D011A24080C /* Pods-MyWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyWork/Pods-MyWork.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7A800B3CD04EAF60DA7224 /* libPods-MyWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC383A76A8DFBEEEB3D8BE75 /* libPods-MyWork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				430C0B811BD7CD55006FC34E /* MyWork */,
 				430C0B801BD7CD55006FC34E /* Products */,
+				69297FFE84FB1AF1FE93DA02 /* Pods */,
+				50BE9E64299AFDDD2C4D88B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		50BE9E64299AFDDD2C4D88B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD7A800B3CD04EAF60DA7224 /* libPods-MyWork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69297FFE84FB1AF1FE93DA02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				849C5236A7D94D011A24080C /* Pods-MyWork.debug.xcconfig */,
+				802942C603316C376B4BD8FF /* Pods-MyWork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 430C0B961BD7CD55006FC34E /* Build configuration list for PBXNativeTarget "MyWork" */;
 			buildPhases = (
+				45C6A15DB4AFA72B176D9197 /* Check Pods Manifest.lock */,
 				430C0B7B1BD7CD55006FC34E /* Sources */,
 				430C0B7C1BD7CD55006FC34E /* Frameworks */,
 				430C0B7D1BD7CD55006FC34E /* Resources */,
+				CE6B77879A5FA9BAC01BE66F /* Embed Pods Frameworks */,
+				6124F4AC60F1EEB5517F423B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45C6A15DB4AFA72B176D9197 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6124F4AC60F1EEB5517F423B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyWork/Pods-MyWork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE6B77879A5FA9BAC01BE66F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyWork/Pods-MyWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		430C0B7B1BD7CD55006FC34E /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		430C0B971BD7CD55006FC34E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 849C5236A7D94D011A24080C /* Pods-MyWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyWork/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		430C0B981BD7CD55006FC34E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 802942C603316C376B4BD8FF /* Pods-MyWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyWork/Info.plist;
@@ -298,6 +375,7 @@
 				430C0B981BD7CD55006FC34E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
